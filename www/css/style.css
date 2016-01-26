@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+.selected, .activated{
+    background-color: lavender !important;
+}
+
+.space-bar{
+    height: 100px;
+}

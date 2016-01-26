@@ -1,0 +1,30 @@
+<div class="modal">
+    <ion-header-bar>
+        <h1 class="title">{{title}} Contact</h1>
+    </ion-header-bar>
+    <ion-content>       
+        <div class="list">           
+            <label class="item item-input">
+                <span class="input-label">Fecha</span>
+                <input type="date" placeholder="dd-MM-yyyy" ng-model="registro.fecha">
+            </label>     
+                    
+            <label class="item item-input">
+                <span class="input-label">Valor</span>
+                <input type="number" ng-model="registro.valor">
+            </label>
+            
+            <label class="item item-input">
+                <span class="input-label">Razon</span>
+                <input type="text" ng-model="registro.razon">
+            </label>
+        </div>
+    </ion-content>
+    
+    <ion-footer-bar > 
+        <div class="button-bar">
+            <a class="button button-assertive" ng-click="closeModal(false)">Cancel</a>       
+            <a class="button button-positive" ng-click="closeModal(true)">Done</a>
+        </div>                 
+    </ion-footer-bar>
+</div>

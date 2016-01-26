@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "D:/presupuesto/www/js/app.js",
+        "D:/Ionic/presupuesto/platforms/android/cordova/lib/device.js"
+    ]
+}
