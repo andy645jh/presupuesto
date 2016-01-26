@@ -1,0 +1,19 @@
+{
+    "registros": [
+
+        {
+            "id" : 1, 
+            "fecha" : "02/02/2005",
+            "valor" : 120000,
+            "razon" : "razon 1"          
+        },
+
+       {
+            "id" : 2, 
+            "fecha" : "03/03/2005",
+            "valor" : 125000,
+            "razon" : "razon 2"        
+        }
+
+    ]
+}
