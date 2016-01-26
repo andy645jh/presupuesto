@@ -77,7 +77,7 @@ example.controller("ExampleController", function($scope, $ionicPopup, $cordovaFi
     
     $scope.refreshData = function()
     {
-        dataFactory.getAll(function(data)
+        dataFactory.getAllJSON(function(data)
         {
             console.log("Datos: " + data);  
             $scope.datos = data;

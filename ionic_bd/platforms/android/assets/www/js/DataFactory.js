@@ -11,8 +11,8 @@ example.factory('dataFactory', function($cordovaFile) {
             $cordovaFile.createFile(cordova.file.dataDirectory, "test.json", false).then(function (success) {          
                 console.log("Parece que creo");
                 
-                save(key);
-                datos = get(key); 
+                //save(key);
+                //datos = get(key); 
                 test();
             }, function (error) {
                 test();
@@ -26,12 +26,12 @@ example.factory('dataFactory', function($cordovaFile) {
         $cordovaFile.readAsText(cordova.file.dataDirectory, "test.json")
         .then(function (success) {
             //$scope.msg("Parece que leyo esto: " +success);
-            console.log("Parece que leyo esto: " +success);
-            if(success!="") datos = JSON.parse(success);    
-            finished(datos===[] ? null:datos);
+            console.log("Parece que leyo esto: " +success.length);
+            if(success!="") datos = success;   
+            finished(datos);
         }, function (error) {
             //$scope.msg("Se toteo leyendo: "+error[0]);
-            console.log("Se toteo leyendo");
+            console.log("Se toteo leyendo"); 
             finished(datos);
         });
 
@@ -39,7 +39,7 @@ example.factory('dataFactory', function($cordovaFile) {
     
     self.saveJSON = function(valores)
     { 
-        $cordovaFile.writeFile(cordova.file.dataDirectory, "test.json", JSON.stringify(valores),true)
+        $cordovaFile.writeFile(cordova.file.dataDirectory, "test.json", valores,true)
         .then(function (success) {
             console.log("Parece que guardo");        
             
@@ -49,9 +49,10 @@ example.factory('dataFactory', function($cordovaFile) {
     };
     
         
-    self.getAll= function()
+    self.getAll= function(receiveData)
     {           
-        return get(key);
+        //return get(key);
+        getAllJSON(receiveData);        
     }
 
     self.add= function(item)
@@ -110,8 +111,10 @@ example.factory('dataFactory', function($cordovaFile) {
     function get(keyname)
     {
         //var datosTemp = JSON.parse(window.localStorage.getItem(keyname));
-        var datosTemp = self.getAllJSON();
-        return datosTemp;
+        return self.getAllJSON(function(data){
+            return data;
+        });
+        
     }
     return self;
 });

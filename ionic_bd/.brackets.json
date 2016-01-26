@@ -1,6 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
         "D:/ionic_bd/www/js/app.js",
-        "D:/Ionic/ionic_bd/www/js/app.js"
+        "D:/Ionic/ionic_bd/www/js/app.js",
+        "D:/Repositorios/presupuesto/ionic_bd/www/js/app.js"
     ]
 }
