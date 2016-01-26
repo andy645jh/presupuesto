@@ -1,0 +1,14 @@
+{"registros": 
+     [{
+      "id": "1",
+      "fecha": "01/02/2015",
+      "valor":"100000",
+      "razon": "Esta es la razon"
+    }],
+    [{
+      "id": "2",
+      "fecha": "02/03/2015",
+      "valor":"200000",
+      "razon": "Esta es la segunda razon"
+    }]
+}
