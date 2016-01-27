@@ -10,9 +10,7 @@ example.factory('dataFactory', function($cordovaFile) {
         document.addEventListener('deviceready', function () {    
             $cordovaFile.createFile(cordova.file.dataDirectory, "test.json", false).then(function (success) {          
                 console.log("Parece que creo");
-                
-                //save(key);
-                //datos = get(key); 
+              
                 test();
             }, function (error) {
                 test();
@@ -26,8 +24,9 @@ example.factory('dataFactory', function($cordovaFile) {
         $cordovaFile.readAsText(cordova.file.dataDirectory, "test.json")
         .then(function (success) {
             //$scope.msg("Parece que leyo esto: " +success);
-            console.log("Parece que leyo esto: " +success.length);
-            if(success!="") datos = success;   
+            console.log("Parece que leyo esto: " + typeof(success));
+            datos = JSON.parse(success);   
+            console.log("Tipo de Datos: " + typeof(datos));
             finished(datos);
         }, function (error) {
             //$scope.msg("Se toteo leyendo: "+error[0]);
@@ -57,7 +56,7 @@ example.factory('dataFactory', function($cordovaFile) {
 
     self.add= function(item)
     {
-        console.log("Add");
+        console.log("Add: "+typeof(datos));
         item.id=datos.length+1;
         datos.push(item);
         save(key);

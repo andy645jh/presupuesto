@@ -11,12 +11,13 @@ var example = angular.module('starter', ['ionic','ngCordova'])
     });
 
 example.controller("ExampleController", function($scope, $ionicPopup, $cordovaFile, $ionicLoading, dataFactory) {
-    $scope.datos={};   
+    $scope.datos=[];   
     //console.log("Funcion: " + test);
     
     dataFactory.init(function()
     {        
-        console.log("Se cargo");  
+        console.log("inicializao");  
+        $scope.refreshData();
         $scope.hide();
     });
     
@@ -78,9 +79,16 @@ example.controller("ExampleController", function($scope, $ionicPopup, $cordovaFi
     $scope.refreshData = function()
     {
         dataFactory.getAllJSON(function(data)
-        {
-            console.log("Datos: " + data);  
+        {              
+            console.log("Tipo: "+typeof(data));
+            //$scope.datos = JSON.parse(data);
             $scope.datos = data;
+            console.log("Tipo: "+typeof($scope.datos));
+            console.log("Datos: " + $scope.datos.length);
+            for (i = 0; i < $scope.datos.length; i++)
+            { 
+                console.log("Elemento: "+$scope.datos[i]);
+            }
         });     
     };
  
